@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      Under Construction
+    <div className="">
+      <Navbar />
     </div>
   );
 }
