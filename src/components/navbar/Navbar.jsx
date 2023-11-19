@@ -1,11 +1,37 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import { motion } from "framer-motion";
+import classNames from "classnames";
+import Link from "next/link";
+
+const menus = [
+  {
+    label: "welcome",
+    link: "test",
+  },
+  {
+    label: "events",
+    link: "test",
+  },
+  {
+    label: "RSVP",
+    link: "test",
+  },
+  {
+    label: "photos",
+    link: "test",
+  },
+  {
+    label: "accomodation",
+    link: "test",
+  },
+];
 
 const Navbar = () => {
   return (
     <div>
       <Mobile />
+      <Desktop />
     </div>
   );
 };
@@ -24,31 +50,9 @@ const Mobile = () => {
     },
   };
 
-  const menus = [
-    {
-      label: "test",
-      link: "test",
-    },
-    {
-      label: "test",
-      link: "test",
-    },
-    {
-      label: "test",
-      link: "test",
-    },
-    {
-      label: "test",
-      link: "test",
-    },
-    {
-      label: "test",
-      link: "test",
-    },
-  ];
   return (
     <div>
-      <div className="fixed top-0 right-0 z-50 w-full h-12 bg-dark flex items-center px-4 justify-end">
+      <div className="fixed top-0 right-0 z-50 w-full h-12 bg-dark flex md:hidden items-center px-4 justify-end">
         <Hamburger
           size={24}
           color="#F3F4F6"
@@ -74,6 +78,31 @@ const Mobile = () => {
           })}
         </ul>
       </motion.div>
+    </div>
+  );
+};
+
+const Desktop = () => {
+  return (
+    <div className="fixed top-0 right-0 z-50 w-full h-16 py-4 bg-dark hidden md:flex items-center px-4 justify-center">
+      <ul className="flex items-center gap-8">
+        {menus.map((item, index) => {
+          const { label, link } = item;
+          return (
+            <Link href={link}>
+              <li
+                key={index}
+                className={classNames(
+                  "text-white capitalize  pb-2",
+                  index === 0 && "border-b-[2px] border-white"
+                )}
+              >
+                {label}
+              </li>
+            </Link>
+          );
+        })}
+      </ul>
     </div>
   );
 };
