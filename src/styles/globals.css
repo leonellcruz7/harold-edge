@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: Georgia;
+}
+
 @font-face {
   font-family: "exmouth";
   src: url("../../public//fonts/exmouth.ttf");

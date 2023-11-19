@@ -89,9 +89,8 @@ const Desktop = () => {
         {menus.map((item, index) => {
           const { label, link } = item;
           return (
-            <Link href={link}>
+            <Link href={link} key={index}>
               <li
-                key={index}
                 className={classNames(
                   "text-white capitalize  pb-2",
                   index === 0 && "border-b-[2px] border-white"
