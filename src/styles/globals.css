@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 body {
+  @apply bg-white;
   font-family: Georgia;
+}
+
+.content {
+  @apply transition-all pb-20;
 }
 
 @font-face {
@@ -17,8 +22,18 @@ body {
 }
 
 .button {
-  @apply py-2 px-4 w-fit font-medium bg-red text-white transition-all;
+  @apply py-2 px-8 w-fit font-medium bg-blue text-white transition-all border-2 shadow-md;
   &:hover {
     @apply brightness-75;
   }
+}
+
+.container {
+  @apply p-4 md:px-10 mx-auto;
+  max-width: 1440px;
+}
+
+.line {
+  @apply w-full bg-grey;
+  height: 1px;
 }
