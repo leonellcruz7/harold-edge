@@ -9,7 +9,7 @@ const People = () => {
         <p className="text-center">Bridesmaids & Groomsmen</p>
         <div className="grid grid-cols-2 md:grid-cols-3 max-w-[360px] md:max-w-[520px] mx-auto gap-y-10 mt-10">
           {Array.from({ length: 6 }).map((item, index) => {
-            return <Avatar />;
+            return <Avatar key={index} />;
           })}
         </div>
       </div>
