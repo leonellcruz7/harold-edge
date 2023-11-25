@@ -7,7 +7,9 @@ const Third = () => {
     <div className="relative m-4">
       <div className="container overflow-hidden h-[220px] bg-red w-full flex flex-col justify-center items-center gap-4">
         <p className="text-white text-3xl">Celebrate with us!</p>
-        <button className="button">Join us!</button>
+        <a href="#rsvp" className="button">
+          Join us!
+        </a>
       </div>
     </div>
   );
