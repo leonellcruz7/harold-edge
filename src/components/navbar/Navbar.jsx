@@ -53,7 +53,7 @@ export default Navbar;
 const Desktop = () => {
   return (
     <div className="bg-green">
-      <div className="container drop-shadow-md flex items-center justify-between py-2 px-4">
+      <div className="container drop-shadow-md flex items-center justify-between px-4">
         <div>
           <div className="h-10 z-10">
             <Logo large />
@@ -175,7 +175,7 @@ const Logo = ({ large }) => {
       <div
         className={classNames(
           "rounded-[50%] bg-white hover:scale-[1.1] transition-all",
-          large ? "h-16 w-16" : "h-12 w-12"
+          large ? "h-24 w-24" : "h-12 w-12"
         )}
       ></div>
     </a>
