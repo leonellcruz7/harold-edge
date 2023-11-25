@@ -8,7 +8,7 @@ body {
 }
 
 .content {
-  @apply transition-all pb-20;
+  @apply transition-all py-20;
 }
 
 @font-face {
