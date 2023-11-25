@@ -15,3 +15,10 @@ body {
 .exmouth {
   font-family: "exmouth";
 }
+
+.button {
+  @apply py-2 px-4 w-fit font-medium bg-red text-white transition-all;
+  &:hover {
+    @apply brightness-75;
+  }
+}

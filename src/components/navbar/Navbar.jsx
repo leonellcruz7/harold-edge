@@ -1,107 +1,179 @@
-import React, { useState } from "react";
 import Hamburger from "hamburger-react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import classNames from "classnames";
-import Link from "next/link";
 
 const menus = [
   {
-    label: "welcome",
-    link: "test",
+    label: "home",
+    link: "#",
+  },
+  {
+    label: "couple",
+    link: "#",
+  },
+  {
+    label: "story",
+    link: "#",
+  },
+  {
+    label: "gallery",
+    link: "#",
+  },
+  {
+    label: "rsvp",
+    link: "#",
   },
   {
     label: "events",
-    link: "test",
+    link: "#",
   },
   {
-    label: "RSVP",
-    link: "test",
-  },
-  {
-    label: "photos",
-    link: "test",
-  },
-  {
-    label: "accomodation",
-    link: "test",
+    label: "blog",
+    link: "#",
   },
 ];
 
 const Navbar = () => {
   return (
     <div>
-      <Mobile />
-      <Desktop />
+      <Top />
+      <div className="md:hidden">
+        <Mobile />
+      </div>
+      <div className="hidden md:block">
+        <Desktop />
+      </div>
     </div>
   );
 };
 
 export default Navbar;
 
-const Mobile = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const panelVariant = {
-    true: {
-      x: 0,
-    },
-    false: {
-      x: "-100%",
-    },
-  };
-
+const Desktop = () => {
   return (
-    <div>
-      <div className="fixed top-0 right-0 z-50 w-full h-12 bg-dark flex md:hidden items-center px-4 justify-end">
-        <Hamburger
-          size={24}
-          color="#F3F4F6"
-          toggled={isOpen}
-          toggle={setIsOpen}
-        />
+    <div className="relative w-full bg-white drop-shadow-md flex items-center justify-between py-2 px-4">
+      <div>
+        <div className="h-10 z-10">
+          <Logo large />
+        </div>
       </div>
-      <motion.div
-        variants={panelVariant}
-        initial={isOpen.toString()}
-        animate={isOpen.toString()}
-        transition={{ type: "spring", duration: 0.5, bounce: 0 }}
-        className="w-[95vw] pt-12 max-w-[500px] h-screen bg-purple fixed z-10 left-0"
-      >
-        <ul className="p-6 flex flex-col gap-6">
-          {menus.map((item, index) => {
-            const { label, link } = item;
-            return (
-              <li key={index} className="text-white capitalize">
+      <ul className="flex items-center gap-4">
+        {menus.map((item, index) => {
+          const { label, link } = item;
+          return (
+            <a href={link}>
+              <li
+                key={index}
+                className="capitalize hover:text-green text-orange"
+              >
                 {label}
               </li>
-            );
-          })}
-        </ul>
-      </motion.div>
+            </a>
+          );
+        })}
+      </ul>
+      <button className="button">RSVP</button>
     </div>
   );
 };
 
-const Desktop = () => {
+const Mobile = () => {
+  const [show, setShow] = useState(false);
+  const menuVariant = {
+    true: {
+      height: "fit-content",
+    },
+    false: {
+      height: 0,
+    },
+  };
+
+  const handleToggle = (toggled) => {
+    console.log(toggled);
+    toggled ? setShow(true) : setShow(false);
+  };
   return (
-    <div className="fixed top-0 right-0 z-50 w-full h-16 py-4 bg-dark hidden md:flex items-center px-4 justify-center">
-      <ul className="flex items-center gap-8">
+    <div className="relative h-10 w-full bg-white drop-shadow-md flex items-center">
+      <div className="flex justify-between w-full pl-2">
+        <div className="translate-y-[10px] z-10">
+          <Logo />
+        </div>
+        <Hamburger
+          size={20}
+          color="#602925"
+          distance="sm"
+          onToggle={(toggled) => handleToggle(toggled)}
+        />
+      </div>
+      <motion.ul
+        variants={menuVariant}
+        initial={show.toString()}
+        animate={show.toString()}
+        transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+        className="w-full absolute top-10 bg-green overflow-hidden"
+      >
         {menus.map((item, index) => {
           const { label, link } = item;
           return (
-            <Link href={link} key={index}>
+            <a href={link}>
               <li
-                className={classNames(
-                  "text-white capitalize  pb-2",
-                  index === 0 && "border-b-[2px] border-white"
-                )}
+                key={index}
+                className="text-white p-4 hover:bg-blue transition-all text-sm uppercase"
               >
                 {label}
               </li>
-            </Link>
+            </a>
           );
         })}
-      </ul>
+        <div className="p-2">
+          <button className="button">RSVP</button>
+        </div>
+      </motion.ul>
     </div>
+  );
+};
+
+const Top = () => {
+  const contact = [
+    {
+      icon: "ri-mail-fill",
+      text: "leonellcruz111513@gmail.com",
+    },
+    {
+      icon: "ri-phone-fill",
+      text: "09154208301",
+    },
+  ];
+  return (
+    <div className="w-full h-6 bg-blue flex items-center px-2">
+      <div className="flex items-center gap-3">
+        {contact.map((item, index) => {
+          const { icon, text } = item;
+          return (
+            <div
+              className="flex items-center gap-2 text-white text-xs"
+              key={index}
+            >
+              <i className={icon} />
+              <p className="">{text}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const Logo = ({ large }) => {
+  return (
+    <a href="#">
+      <div
+        className={classNames(
+          "rounded-[50%] bg-blue hover:scale-[1.1] transition-all",
+          large ? "h-16 w-16" : "h-12 w-12"
+        )}
+      ></div>
+    </a>
   );
 };
