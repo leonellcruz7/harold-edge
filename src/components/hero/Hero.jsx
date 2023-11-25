@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="home">
       <div className="container h-full pt-24 md:pt-36">
         <div className="absolute top-0 left-0 w-screen h-full z-[-1] opacity-[.2] flex items-center justify-center">
           <Image

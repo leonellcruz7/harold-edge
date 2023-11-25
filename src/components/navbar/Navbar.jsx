@@ -6,31 +6,27 @@ import classNames from "classnames";
 const menus = [
   {
     label: "home",
-    link: "#",
+    link: "#home",
   },
   {
     label: "couple",
-    link: "#",
-  },
-  {
-    label: "story",
-    link: "#",
+    link: "#couple",
   },
   {
     label: "gallery",
-    link: "#",
+    link: "#gallery",
   },
   {
     label: "rsvp",
-    link: "#",
+    link: "#rsvp",
   },
   {
-    label: "events",
-    link: "#",
+    label: "bridesmaid & groomsmen",
+    link: "#bridesmaid-groomsmen",
   },
   {
-    label: "blog",
-    link: "#",
+    label: "location",
+    link: "#location",
   },
 ];
 
@@ -51,7 +47,6 @@ const Navbar = () => {
 export default Navbar;
 
 const Desktop = () => {
-  useEffect(() => {}, []);
   return (
     <div className="backdrop-blur-lg backdrop-brightness-90">
       <div className="container drop-shadow-md flex items-center justify-between px-4">
@@ -90,19 +85,20 @@ const Mobile = () => {
   };
   useEffect(() => {
     const content = document.querySelector(".content");
-    const body = document.body;
+
     if (show) {
       content.style.filter = "blur(4px) brightness(.9)";
-      body.style.position = "fixed";
     } else {
       content.style.filter = "blur(0) brightness(1)";
-      body.style.position = "relative";
     }
   }, [show]);
 
   const handleToggle = (toggled) => {
-    console.log(toggled);
     toggled ? setShow(true) : setShow(false);
+  };
+
+  const handleClick = () => {
+    setShow(false);
   };
   return (
     <div className="relative h-14 w-full backdrop-blur-lg backdrop-brightness-90 drop-shadow-md flex items-center">
@@ -110,11 +106,13 @@ const Mobile = () => {
         <div className="translate-y-[10px] z-10">
           <Logo />
         </div>
+
         <Hamburger
+          onToggle={(toggled) => handleToggle(toggled)}
+          toggled={show}
           size={20}
           color="#929576"
           distance="sm"
-          onToggle={(toggled) => handleToggle(toggled)}
         />
       </div>
       <motion.ul
@@ -127,15 +125,17 @@ const Mobile = () => {
         {menus.map((item, index) => {
           const { label, link } = item;
           return (
-            <a key={index} href={link} className="w-full max-w-[100px]">
-              <li className="text-red p-4 transition-all text-sm uppercase border-b-[1px] border-[#777]">
+            <a onClick={handleClick} key={index} href={link} className="w-fit">
+              <li className="text-red p-4 transition-all text-sm uppercase border-b-[1px] border-[#777] pl-10">
                 {label}
               </li>
             </a>
           );
         })}
         <div className="py-4">
-          <button className="button">RSVP</button>
+          <a href="#rsvp" onClick={handleClick} className="button">
+            RSVP
+          </a>
         </div>
       </motion.ul>
     </div>
@@ -175,7 +175,7 @@ const Top = () => {
 
 const Logo = ({ large }) => {
   return (
-    <a href="#">
+    <a href="#home">
       <div
         className={classNames(
           "rounded-[50%] bg-white hover:scale-[1.1] transition-all",

@@ -4,7 +4,7 @@ import TopBorder from "../shared/TopBorder";
 
 const Form = () => {
   return (
-    <div className="container">
+    <div id="rsvp" className="container">
       <div className="w-full p-4 md:px-8 bg-[#f2f2f2] max-w-[600px] mx-auto shadow-lg py-10">
         <TopBorder />
         <p className="text-center text-blue text-3xl">Are you attending?</p>

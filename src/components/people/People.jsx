@@ -3,7 +3,7 @@ import TopBorder from "../shared/TopBorder";
 
 const People = () => {
   return (
-    <div className="py-10">
+    <div id="bridesmaid-groomsmen" className="py-10">
       <div className="container">
         <TopBorder />
         <p className="text-center">Bridesmaids & Groomsmen</p>

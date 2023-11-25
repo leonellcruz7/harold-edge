@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-white;
   font-family: Georgia;
@@ -34,8 +38,11 @@ body {
 }
 
 .line {
-  @apply w-full bg-grey;
+  @apply w-full bg-green;
   height: 1px;
+  &.light {
+    @apply bg-white;
+  }
 }
 
 .input {

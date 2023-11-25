@@ -15,7 +15,7 @@ const Second = () => {
     },
   ];
   return (
-    <div className="container py-10">
+    <div id="couple" className="container py-10">
       <div className="flex flex-col gap-4 w-full max-w-[1000px] mx-auto">
         {content.map((item, index) => {
           const { name, description, image } = item;
