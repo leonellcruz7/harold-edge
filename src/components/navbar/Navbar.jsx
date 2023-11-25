@@ -17,10 +17,6 @@ const menus = [
     link: "#gallery",
   },
   {
-    label: "rsvp",
-    link: "#rsvp",
-  },
-  {
     label: "bridesmaid & groomsmen",
     link: "#bridesmaid-groomsmen",
   },
