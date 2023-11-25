@@ -1,3 +1,4 @@
+import Details from "@/components/details/Details";
 import Form from "@/components/form/Form";
 import Fourth from "@/components/fourth/Fourth";
 import Hero from "@/components/hero/Hero";
@@ -20,6 +21,7 @@ export default function Home() {
         <Fourth />
         <Form />
         <People />
+        <Details />
       </div>
     </div>
   );

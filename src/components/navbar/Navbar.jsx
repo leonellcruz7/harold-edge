@@ -51,8 +51,9 @@ const Navbar = () => {
 export default Navbar;
 
 const Desktop = () => {
+  useEffect(() => {}, []);
   return (
-    <div className="bg-green">
+    <div className="backdrop-blur-lg backdrop-brightness-90">
       <div className="container drop-shadow-md flex items-center justify-between px-4">
         <div>
           <div className="h-10 z-10">
@@ -64,7 +65,7 @@ const Desktop = () => {
             const { label, link } = item;
             return (
               <a key={index} href={link}>
-                <li className="capitalize hover:text-red text-white font-medium">
+                <li className="capitalize hover:text-red text-blue font-medium">
                   {label}
                 </li>
               </a>
@@ -104,14 +105,14 @@ const Mobile = () => {
     toggled ? setShow(true) : setShow(false);
   };
   return (
-    <div className="relative h-10 w-full bg-green drop-shadow-md flex items-center">
-      <div className="flex justify-between w-full pl-2">
+    <div className="relative h-14 w-full backdrop-blur-lg backdrop-brightness-90 drop-shadow-md flex items-center">
+      <div className="flex justify-between items-center w-full pl-2">
         <div className="translate-y-[10px] z-10">
           <Logo />
         </div>
         <Hamburger
           size={20}
-          color="#f6f7ec"
+          color="#929576"
           distance="sm"
           onToggle={(toggled) => handleToggle(toggled)}
         />
@@ -121,13 +122,13 @@ const Mobile = () => {
         initial={show.toString()}
         animate={show.toString()}
         transition={{ type: "spring", bounce: 0, duration: 0.6 }}
-        className="w-full absolute top-10 overflow-hidden text-right flex flex-col items-end px-8"
+        className="w-full absolute top-10 overflow-hidden text-right flex flex-col items-end px-8 mt-10"
       >
         {menus.map((item, index) => {
           const { label, link } = item;
           return (
             <a key={index} href={link} className="w-full max-w-[100px]">
-              <li className="text-red p-4 hover:bg-blue transition-all text-sm uppercase border-b-[1px] border-[#777]">
+              <li className="text-red p-4 transition-all text-sm uppercase border-b-[1px] border-[#777]">
                 {label}
               </li>
             </a>
@@ -178,7 +179,7 @@ const Logo = ({ large }) => {
       <div
         className={classNames(
           "rounded-[50%] bg-white hover:scale-[1.1] transition-all",
-          large ? "h-24 w-24" : "h-12 w-12"
+          large ? "h-24 w-24" : "h-16 w-16"
         )}
       ></div>
     </a>

@@ -1,15 +1,12 @@
 import Ring from "@/icons/Ring";
 import React from "react";
+import TopBorder from "../shared/TopBorder";
 
 const Fourth = () => {
   return (
     <div className="py-10">
       <div className="container">
-        <div className="flex items-center gap-4 mx-auto max-w-[300px]">
-          <div className="line"></div>
-          <Ring className="w-10" />
-          <div className="line"></div>
-        </div>
+        <TopBorder />
         <div className="text-center mb-10 mt-4">
           <p>Sweet Captured Moments</p>
         </div>
