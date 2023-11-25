@@ -36,7 +36,7 @@ const menus = [
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="fixed top-0 left-0 w-full">
       <Top />
       <div className="md:hidden">
         <Mobile />
@@ -62,11 +62,8 @@ const Desktop = () => {
         {menus.map((item, index) => {
           const { label, link } = item;
           return (
-            <a href={link}>
-              <li
-                key={index}
-                className="capitalize hover:text-green text-orange"
-              >
+            <a key={index} href={link}>
+              <li className="capitalize hover:text-green text-orange">
                 {label}
               </li>
             </a>
@@ -116,11 +113,8 @@ const Mobile = () => {
         {menus.map((item, index) => {
           const { label, link } = item;
           return (
-            <a href={link}>
-              <li
-                key={index}
-                className="text-white p-4 hover:bg-blue transition-all text-sm uppercase"
-              >
+            <a key={index} href={link}>
+              <li className="text-white p-4 hover:bg-blue transition-all text-sm uppercase">
                 {label}
               </li>
             </a>
