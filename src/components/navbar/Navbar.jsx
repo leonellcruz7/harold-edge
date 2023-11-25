@@ -89,10 +89,13 @@ const Mobile = () => {
   };
   useEffect(() => {
     const content = document.querySelector(".content");
+    const body = document.body;
     if (show) {
       content.style.filter = "blur(4px) brightness(.9)";
+      body.style.position = "fixed";
     } else {
       content.style.filter = "blur(0) brightness(1)";
+      body.style.position = "relative";
     }
   }, [show]);
 
