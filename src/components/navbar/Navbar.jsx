@@ -67,7 +67,9 @@ const Desktop = () => {
             );
           })}
         </ul>
-        <button className="button">RSVP</button>
+        <a href="#rsvp" className="button">
+          RSVP
+        </a>
       </div>
     </div>
   );
