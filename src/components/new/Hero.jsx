@@ -26,7 +26,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="lg:order-1 w-full h-[65%] lg:h-full lg:w-[55%] flex items-end">
-          <div className="relative flex items-end opacity-[1]">
+          <div className="relative flex items-end">
             <Image
               src={heroImage}
               className={

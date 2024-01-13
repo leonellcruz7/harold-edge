@@ -26,15 +26,15 @@ const menus = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ handleShowRsvp }) => {
   return (
     <div className="fixed top-0 left-0 w-full z-50">
       <Top />
       <div className="md:hidden">
-        <Mobile />
+        <Mobile handleShowRsvp={handleShowRsvp} />
       </div>
       <div className="hidden md:block">
-        <Desktop />
+        <Desktop handleShowRsvp={handleShowRsvp} />
       </div>
     </div>
   );
@@ -42,7 +42,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const Desktop = () => {
+const Desktop = ({ handleShowRsvp }) => {
   return (
     <div className="backdrop-blur-lg backdrop-brightness-90">
       <div className="container drop-shadow-md flex items-center justify-between px-4">
@@ -56,22 +56,22 @@ const Desktop = () => {
             const { label, link } = item;
             return (
               <a key={index} href={link}>
-                <li className="capitalize hover:text-red text-blue font-medium">
+                <li className="capitalize hover:text-blue text-white font-medium">
                   {label}
                 </li>
               </a>
             );
           })}
         </ul>
-        <a href="#rsvp" className="button">
+        <button onClick={handleShowRsvp} className="button">
           RSVP
-        </a>
+        </button>
       </div>
     </div>
   );
 };
 
-const Mobile = () => {
+const Mobile = ({ handleShowRsvp }) => {
   const [show, setShow] = useState(false);
   const menuVariant = {
     true: {
@@ -124,16 +124,16 @@ const Mobile = () => {
           const { label, link } = item;
           return (
             <a onClick={handleClick} key={index} href={link} className="w-fit">
-              <li className="text-red p-4 transition-all text-sm uppercase border-b-[1px] border-[#777] pl-10">
+              <li className="text-white p-4 transition-all text-sm uppercase border-b-[1px] border-[#777] pl-10">
                 {label}
               </li>
             </a>
           );
         })}
         <div className="py-4">
-          <a href="#rsvp" onClick={handleClick} className="button">
+          <button onClick={handleShowRsvp} className="button">
             RSVP
-          </a>
+          </button>
         </div>
       </motion.ul>
     </div>

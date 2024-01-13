@@ -20,7 +20,7 @@ export default function Home() {
   const [showRsvp, setShowRsvp] = useState(false);
   return (
     <div className="relative">
-      <Navbar />
+      <Navbar handleShowRsvp={() => setShowRsvp(true)} />
       <div className="content relative">
         <Hero />
         <Second />
