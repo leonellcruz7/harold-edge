@@ -57,7 +57,7 @@ const Eight = () => {
                   <p>{people[key]}</p>
                 ) : (
                   people[key].map((item, index) => {
-                    return <p>{item}</p>;
+                    return <p key={index}>{item}</p>;
                   })
                 )}
               </div>
