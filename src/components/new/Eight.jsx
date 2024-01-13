@@ -50,7 +50,7 @@ const Eight = () => {
       <div className="text-center flex flex-col gap-4 mt-10">
         {keys.map((key, index) => {
           return (
-            <div>
+            <div key={index}>
               <p className="uppercase font-semibold">{key}</p>
               <div>
                 {typeof people[key] === "string" ? (
