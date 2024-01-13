@@ -20,7 +20,7 @@ const Seventh = () => {
       </div>
 
       <div className="w-full flex items-center">
-        <Image src={gifts} />
+        <Image alt="" src={gifts} />
       </div>
     </div>
   );
