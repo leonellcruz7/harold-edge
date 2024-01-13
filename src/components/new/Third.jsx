@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Third = () => {
   return (
@@ -15,24 +15,54 @@ const Third = () => {
 export default Third;
 
 const Countdown = () => {
+  const [count, setCount] = useState(null);
   const countdown = [
     {
       label: "days",
-      value: 100,
+      value: count?.days,
     },
     {
       label: "hours",
-      value: 2,
+      value: count?.hours,
     },
     {
       label: "minutes",
-      value: 49,
+      value: count?.minutes,
     },
     {
       label: "seconds",
-      value: 20,
+      value: count?.seconds,
     },
   ];
+  useEffect(() => {
+    const targetDate = new Date(2024, 1, 25, 0, 0, 0); // February 25, 2024 00:00:00
+
+    function updateCountdown() {
+      const currentDate = new Date();
+      const timeDifference = targetDate - currentDate;
+
+      if (timeDifference > 0) {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        setCount({ days, hours, minutes, seconds });
+      } else {
+        document.getElementById("countdown").innerHTML = "Countdown expired!";
+      }
+    }
+
+    // Update the countdown every second (1000 milliseconds)
+    setInterval(updateCountdown, 1000);
+
+    // Initial call to set the initial countdown value
+    updateCountdown();
+  }, []);
   return (
     <div className="w-full flex flex-col gap-2">
       <div className="text-center text-white">
