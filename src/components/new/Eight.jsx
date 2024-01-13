@@ -45,7 +45,7 @@ const Eight = () => {
   const keys = Object.keys(people);
 
   return (
-    <div className="px-4 py-14 text-[#2F454E]">
+    <div id="entourage" className="px-4 py-14 text-[#2F454E]">
       <p className="maple text-4xl text-center">Entourage</p>
       <div className="text-center flex flex-col gap-4 mt-10">
         {keys.map((key, index) => {

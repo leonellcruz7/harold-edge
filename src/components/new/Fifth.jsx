@@ -7,7 +7,7 @@ import Image from "next/image";
 const Fifth = () => {
   const colors = ["#C19984", "#B89069", "#D17C5E", "#B57251", "#D9C0AA"];
   return (
-    <div className="bg-[#fff]">
+    <div id="location" className="bg-[#fff]">
       <Image src={map} />
       <div className="px-4 py-14 text-[#905844]">
         <div className="max-w-[300px] mx-auto">

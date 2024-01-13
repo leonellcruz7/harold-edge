@@ -24,7 +24,10 @@ const Fourth = () => {
     },
   };
   return (
-    <div className="px-4 py-14 text-center flex flex-col items-center gap-10 text-[#31464D]">
+    <div
+      id="details"
+      className="px-4 py-14 text-center flex flex-col items-center gap-10 text-[#31464D]"
+    >
       <Carousel
         responsive={responsive}
         containerClass="w-full max-w-[500px]"

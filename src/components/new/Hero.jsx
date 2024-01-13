@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 
 const Hero = () => {
   return (
-    <div className="h-[95vh] overflow-hidden pt-20 bg-[#31484C]">
+    <div id="home" className="h-[95vh] overflow-hidden pt-20 bg-[#31484C]">
       <div className="flex flex-col lg:flex-row w-full h-full items-center justify-center">
         <div className="lg:order-2 z-10 h-[35%] lg:h-full lg:w-[45%] flex items-center justify-center">
           <div className="w-[350px] lg:w-[500px] relative text-white maple flex items-center justify-center translate-y-[40px]">

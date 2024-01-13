@@ -9,16 +9,16 @@ const menus = [
     link: "#home",
   },
   {
-    label: "couple",
-    link: "#couple",
+    label: "details",
+    link: "#details",
   },
   {
-    label: "gallery",
-    link: "#gallery",
+    label: "events",
+    link: "#events",
   },
   {
-    label: "bridesmaid & groomsmen",
-    link: "#bridesmaid-groomsmen",
+    label: "entourage",
+    link: "#entourage",
   },
   {
     label: "location",
@@ -47,9 +47,7 @@ const Desktop = ({ handleShowRsvp }) => {
     <div className="backdrop-blur-lg backdrop-brightness-90">
       <div className="container drop-shadow-md flex items-center justify-between px-4">
         <div>
-          <div className="h-10 z-10">
-            <Logo large />
-          </div>
+          <div className="h-10 z-10">{/* <Logo large /> */}</div>
         </div>
         <ul className="flex items-center gap-4">
           {menus.map((item, index) => {
@@ -101,9 +99,7 @@ const Mobile = ({ handleShowRsvp }) => {
   return (
     <div className="relative h-14 w-full backdrop-blur-lg backdrop-brightness-90 drop-shadow-md flex items-center">
       <div className="flex justify-between items-center w-full pl-2">
-        <div className="translate-y-[10px] z-10">
-          <Logo />
-        </div>
+        <div className="translate-y-[10px] z-10">{/* <Logo /> */}</div>
 
         <Hamburger
           onToggle={(toggled) => handleToggle(toggled)}
