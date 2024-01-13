@@ -1,28 +1,45 @@
-import Details from "@/components/details/Details";
-import Form from "@/components/form/Form";
-import Fourth from "@/components/fourth/Fourth";
-import Hero from "@/components/hero/Hero";
+import Modal from "@/components/Modal";
+import Rsvp from "@/components/Rsvp";
 import Navbar from "@/components/navbar/Navbar";
-import People from "@/components/people/People";
-import Second from "@/components/second/Second";
-import Third from "@/components/third/Third";
+import Eight from "@/components/new/Eight";
+import Fifth from "@/components/new/Fifth";
+import Fourth from "@/components/new/Fourth";
+import Hero from "@/components/new/Hero";
+import Nineth from "@/components/new/Nineth";
+import Second from "@/components/new/Second";
+import Seventh from "@/components/new/Seventh";
+import Sixth from "@/components/new/Sixth";
+import Third from "@/components/new/Third";
+
 import { Inter } from "next/font/google";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [showRsvp, setShowRsvp] = useState(false);
   return (
-    <div className="">
+    <div className="relative">
       <Navbar />
-      <div className="content">
+      <div className="content relative">
         <Hero />
+        <Second />
+        <Third />
+        <Fourth />
+        <Fifth />
+        <Sixth />
+        <Seventh />
+        <Eight />
+        <Nineth handleShowRsvp={() => setShowRsvp(true)} />
+        {/* <Hero />
         <Second />
         <Third />
         <Fourth />
         <Form />
         <People />
-        <Details />
+        <Details /> */}
       </div>
+      {showRsvp && <Rsvp handleClose={() => setShowRsvp(false)} />}
     </div>
   );
 }

@@ -16,11 +16,14 @@ const Hero = () => {
             alt=""
           />
         </div>
-        <div className="bg-blue p-4 w-full h-[60%] z-[2]">
+        <div className="bg-blue pt-14 p-4 w-full h-[50%] md:h-[70%] flex items-center justify-center z-[2]">
           <div className={styles.text}>
+            <p className={styles.header}>It's a wedding</p>
             <p>Harold</p>
-            <p>&</p>
-            <p>Edge</p>
+            <div className="flex">
+              <p>&</p>
+              <p>Edge</p>
+            </div>
           </div>
         </div>
         <div className="h-[40%] flex items-center w-full">
@@ -32,48 +35,6 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const Countdown = () => {
-  const countdown = [
-    {
-      label: "days",
-      value: 100,
-    },
-    {
-      label: "hours",
-      value: 2,
-    },
-    {
-      label: "minutes",
-      value: 49,
-    },
-    {
-      label: "seconds",
-      value: 20,
-    },
-  ];
-  return (
-    <div className="w-full flex flex-col gap-2">
-      <div className="text-center text-blue">
-        <p>Celebrate with us</p>
-      </div>
-      <div className="w-full max-w-[500px] mx-auto h-[100px] border-y-[.2px] border-blue py-10 flex items-center justify-center gap-10">
-        {countdown.map((item, index) => {
-          const { label, value } = item;
-          return (
-            <div key={index} className="text-center">
-              <p className="text-blue font-semibold text-3xl">{value}</p>
-              <p className="text-sm text-grey">{label}</p>
-            </div>
-          );
-        })}
-      </div>
-      {/* <div className="flex justify-center">
-        <button className="button">RSVP</button>
-      </div> */}
-    </div>
-  );
-};
 
 const ScrollDown = () => {
   return <div></div>;

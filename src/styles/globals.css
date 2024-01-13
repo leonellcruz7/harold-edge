@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
 * {
   scroll-behavior: smooth;
 }
@@ -12,23 +14,59 @@ body {
 }
 
 .content {
-  @apply transition-all py-20;
+  @apply transition-all;
 }
 
 @font-face {
   font-family: "exmouth";
-  src: url("../../public//fonts/exmouth.ttf");
+  src: url("../../public/fonts/exmouth.ttf");
   font-weight: 500;
+}
+@font-face {
+  font-family: "maple";
+  src: url("../../public/fonts/maple.otf");
+}
+
+@font-face {
+  font-family: "cursive";
+  src: url("../../public//fonts/cursive.otf");
+}
+@font-face {
+  font-family: "josefin";
+  src: url("../../public//fonts/josefin.ttf");
 }
 
 .exmouth {
   font-family: "exmouth";
+}
+.maple {
+  font-family: "maple";
+}
+.cursive {
+  font-family: "cursive";
+}
+.josefin {
+  font-family: "josefin";
 }
 
 .button {
   @apply py-2 px-8 w-fit font-medium bg-blue text-white transition-all border-2 shadow-md;
   &:hover {
     @apply brightness-75;
+  }
+
+  &:disabled {
+    @apply bg-grey;
+    &:hover {
+      @apply brightness-100;
+    }
+  }
+
+  &.orange {
+    @apply border-none uppercase font-bold w-full;
+    border-radius: 8px;
+    background-color: #cd9156;
+    color: white;
   }
 }
 
