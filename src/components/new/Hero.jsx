@@ -29,9 +29,8 @@ const Hero = () => {
           <div className="relative flex items-end">
             <Image
               src={heroImage}
-              className={
-                "translate-y-[100px] xl:translate-y-[200px] hidden lg:block w-full h-full"
-              }
+              className={"xl:translate-y-[100px] hidden lg:block w-full h-full"}
+              // className={" hidden lg:block w-full h-full"}
               alt=""
             />
             <Image
