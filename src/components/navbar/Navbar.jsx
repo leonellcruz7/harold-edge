@@ -140,11 +140,11 @@ const Top = () => {
   const contact = [
     {
       icon: "ri-mail-fill",
-      text: "leonellcruz111513@gmail.com",
+      text: "harold.workmail@gmail.com",
     },
     {
       icon: "ri-phone-fill",
-      text: "09154208301",
+      text: "09159463296",
     },
   ];
   return (
