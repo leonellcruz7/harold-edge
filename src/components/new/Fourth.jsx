@@ -2,27 +2,17 @@ import Image from "next/image";
 import React from "react";
 import image1 from "../../../public/images/fourth.jpg";
 import Carousel from "react-multi-carousel";
+import { responsive } from "@/utils";
+import a from "../../../public/images/a.jpg";
+import b from "../../../public/images/b.jpg";
+import c from "../../../public/images/c.jpg";
+import d from "../../../public/images/d.jpg";
+import e from "../../../public/images/e.jpg";
+import f from "../../../public/images/f.jpg";
 
 const Fourth = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+  const images = [b, c, d, e, f];
+
   return (
     <div
       id="details"
@@ -33,10 +23,13 @@ const Fourth = () => {
         containerClass="w-full max-w-[500px]"
         showDots
       >
-        <Image src={image1} className="" />
-        <Image src={image1} className="" />
-        <Image src={image1} className="" />
-        <Image src={image1} className="" />
+        {images.map((item, index) => {
+          return (
+            <div className="h-[700px] flex items-center" key={index}>
+              <Image src={item} className="" />
+            </div>
+          );
+        })}
       </Carousel>
 
       <div className="flex flex-col gap-8 uppercase josefin font-medium">

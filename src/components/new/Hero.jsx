@@ -1,9 +1,14 @@
 import React from "react";
 import heroFaded from "../../../public/images/hero.png";
 import heroImage from "../../../public/images/heroSide.png";
-import Image from "next/image";
-import classNames from "classnames";
-import styles from "./styles.module.scss";
+import a from "../../../public/images/a.jpg";
+import b from "../../../public/images/b.jpg";
+import c from "../../../public/images/c.jpg";
+import d from "../../../public/images/d.jpg";
+import e from "../../../public/images/e.jpg";
+import f from "../../../public/images/f.jpg";
+import Carousel from "react-multi-carousel";
+import { responsive } from "@/utils";
 
 const Hero = () => {
   console.log(heroFaded);
@@ -26,19 +31,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
         <div className="lg:order-1 w-full h-[65%] lg:h-full lg:w-[55%] flex items-end">
-          <div className="relative flex items-end">
-            {/* <Image
-              src={heroImage}
-              className={"xl:translate-y-[100px] hidden lg:block w-full h-full"}
-              // className={" hidden lg:block w-full h-full"}
-              alt=""
-            />
-            <Image
-              src={heroFaded}
-              className={"md:translate-y-[400px] lg:hidden w-full h-full"}
-              alt=""
-            /> */}
+          <div>
             <img
               src={heroImage.src}
               className={"xl:translate-y-[100px] hidden lg:block w-full h-full"}
@@ -50,6 +45,24 @@ const Hero = () => {
               className={"md:translate-y-[400px] lg:hidden w-full h-full"}
               alt=""
             />
+            {/* <Carousel responsive={responsive} containerClass="w-full h-full">
+            <img
+              src={a.src}
+              className={"xl:translate-y-[100px] hidden lg:block w-full h-full"}
+              // className={" hidden lg:block w-full h-full"}
+              alt=""
+            />
+            </Carousel> */}
+            {/* <Carousel responsive={responsive} containerClass="w-full h-full">
+              <img
+                src={heroImage.src}
+                className={
+                  "xl:translate-y-[100px] hidden lg:block w-full h-full"
+                }
+                // className={" hidden lg:block w-full h-full"}
+                alt=""
+              />
+            </Carousel> */}
           </div>
         </div>
       </div>
