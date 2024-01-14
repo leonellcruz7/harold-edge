@@ -4,14 +4,14 @@ import image1 from "../../../public/images/fourth.jpg";
 import Carousel from "react-multi-carousel";
 import { responsive } from "@/utils";
 import a from "../../../public/images/a.jpg";
-import b from "../../../public/images/b.JPG";
-import c from "../../../public/images/c.JPG";
-import d from "../../../public/images/d.JPG";
-import e from "../../../public/images/e.JPG";
-import f from "../../../public/images/f.jpg";
+import q from "../../../public/images/q.jpg";
+import w from "../../../public/images/w.jpg";
+import e from "../../../public/images/e.jpg";
+import r from "../../../public/images/r.jpg";
+import t from "../../../public/images/t.jpg";
 
 const Fourth = () => {
-  const images = [b, c, d, e, f];
+  const images = [q, w, e, r, t];
 
   return (
     <div
