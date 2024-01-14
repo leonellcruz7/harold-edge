@@ -8,7 +8,7 @@ const Nineth = ({ handleShowRsvp }) => {
         <p className="maple text-4xl">See you there?</p>
         <p className="uppercase">RSVP on or before February 1, 2024</p>
         <div className="mt-10 flex gap-4 flex-col sm:flex-row max-w-[600px] mx-auto">
-          <button className="button orange" onClick={handleShowRsvp}>
+          <button className="button orange w-full" onClick={handleShowRsvp}>
             i&apos;m so going
           </button>
         </div>
