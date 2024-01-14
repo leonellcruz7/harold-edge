@@ -6,6 +6,7 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 
 const Hero = () => {
+  console.log(heroFaded);
   return (
     <div id="home" className="h-[95vh] overflow-hidden pt-20 bg-[#31484C]">
       <div className="flex flex-col lg:flex-row w-full h-full items-center justify-center">
@@ -27,7 +28,7 @@ const Hero = () => {
         </div>
         <div className="lg:order-1 w-full h-[65%] lg:h-full lg:w-[55%] flex items-end">
           <div className="relative flex items-end">
-            <Image
+            {/* <Image
               src={heroImage}
               className={"xl:translate-y-[100px] hidden lg:block w-full h-full"}
               // className={" hidden lg:block w-full h-full"}
@@ -35,6 +36,17 @@ const Hero = () => {
             />
             <Image
               src={heroFaded}
+              className={"md:translate-y-[400px] lg:hidden w-full h-full"}
+              alt=""
+            /> */}
+            <img
+              src={heroImage.src}
+              className={"xl:translate-y-[100px] hidden lg:block w-full h-full"}
+              // className={" hidden lg:block w-full h-full"}
+              alt=""
+            />
+            <img
+              src={heroFaded.src}
               className={"md:translate-y-[400px] lg:hidden w-full h-full"}
               alt=""
             />
