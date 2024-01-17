@@ -1,14 +1,6 @@
 import React from "react";
 import heroFaded from "../../../public/images/hero.png";
 import heroImage from "../../../public/images/heroSide.png";
-import a from "../../../public/images/a.jpg";
-import b from "../../../public/images/b.jpg";
-import c from "../../../public/images/c.jpg";
-import d from "../../../public/images/d.jpg";
-import e from "../../../public/images/e.jpg";
-import f from "../../../public/images/f.jpg";
-import Carousel from "react-multi-carousel";
-import { responsive } from "@/utils";
 
 const Hero = () => {
   console.log(heroFaded);

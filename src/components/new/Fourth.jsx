@@ -3,7 +3,7 @@ import React from "react";
 import image1 from "../../../public/images/fourth.jpg";
 import Carousel from "react-multi-carousel";
 import { responsive } from "@/utils";
-import a from "../../../public/images/a.jpg";
+
 import q from "../../../public/images/q.jpg";
 import w from "../../../public/images/w.jpg";
 import e from "../../../public/images/e.jpg";
@@ -18,7 +18,10 @@ const Fourth = () => {
       id="details"
       className="px-4 py-14 text-center flex flex-col items-center gap-10 text-[#31464D]"
     >
-      <Carousel
+      <div className="max-w-[400px]">
+        <Image src={w} />
+      </div>
+      {/* <Carousel
         responsive={responsive}
         containerClass="w-full max-w-[500px]"
         showDots
@@ -30,7 +33,7 @@ const Fourth = () => {
             </div>
           );
         })}
-      </Carousel>
+      </Carousel> */}
 
       <div className="flex flex-col gap-8 uppercase josefin font-medium">
         <p className="maple text-6xl">Details</p>
