@@ -1,18 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import image1 from "../../../public/images/fourth.jpg";
-import Carousel from "react-multi-carousel";
-import { responsive } from "@/utils";
 
-import q from "../../../public/images/q.jpg";
 import w from "../../../public/images/w.jpg";
-import e from "../../../public/images/e.jpg";
-import r from "../../../public/images/r.jpg";
-import t from "../../../public/images/t.jpg";
 
 const Fourth = () => {
-  const images = [q, w, e, r, t];
-
   return (
     <div
       id="details"
