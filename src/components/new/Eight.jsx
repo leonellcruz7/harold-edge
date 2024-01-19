@@ -14,6 +14,7 @@ const Eight = () => {
       "Mrs. Irma De Leon - Mr. Jonnel De Leon",
       "Ms. Zenaida Junsay",
       "Ms. Adelaida Pen",
+      "Ms. Miriam Simacas",
       "Mrs. Roselyn Ejercito - Mr. Lemuel Ejercito",
       "Mrs. Victoria Soriano - Mr. Roseller Soriano",
       "Mrs. Jeniffer Bacolod - Mr. Julius Bacolod",

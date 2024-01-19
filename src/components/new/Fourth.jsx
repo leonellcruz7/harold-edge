@@ -28,7 +28,7 @@ const Fourth = () => {
 
       <div className="flex flex-col gap-8 uppercase josefin font-medium">
         <p className="maple text-6xl">Details</p>
-        <p>february 25, 2024 | Saturday | 4 pm</p>
+        <p>february 25, 2024 | Saturday | 3 pm</p>
         <p>Flor’s garden, antipolo rizal</p>
         <p>Guests are encouraged to arrive two hours early.</p>
         <p className="cursive normal-case text-[30px]">
