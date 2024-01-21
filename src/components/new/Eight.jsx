@@ -19,7 +19,7 @@ const Eight = () => {
       "Mrs. Victoria Soriano - Mr. Roseller Soriano",
       "Mrs. Jeniffer Bacolod - Mr. Julius Bacolod",
     ],
-    "BEST MAN": "Lazarus De Guzman",
+    "BEST MAN": "Carl Lazarus De Guzman",
     "MAID OF HONOR": "Micah Lorena Antonio",
     "GROOMS MEN": [
       "Kyle Planta",
