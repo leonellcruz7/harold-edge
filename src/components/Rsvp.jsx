@@ -23,11 +23,7 @@ const Rsvp = ({ handleClose }) => {
       await response.json();
       console.log(response);
       setValue("");
-      Swal.fire(
-        "Great!",
-        "Your inquiry have been sent! We will reach out to you soon.",
-        "success"
-      );
+      Swal.fire("Great!", "Your response has been submitted!", "success");
       handleClose();
     } catch (err) {
       console.log(err);
